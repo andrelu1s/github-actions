@@ -1,0 +1,27 @@
+name: PUSH to prod - Teste André
+
+on: 
+  push:
+    branches: [main]
+  pull_request:
+    branches: [master]
+    types: [closed]
+
+jobs:
+  merge-main-to-prod:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    # - name: Config GitHub
+      # run: |
+      #     git config --local user.email "actions@github.com"
+      #     git config --local user.name "Github Actions"
+    - name: Merge main to prod
+      run: |
+          git fetch --unshallow
+          git checkout prod
+          git pull
+          git merge --no-ff main -m "Auto-merge main to prod"
+          git push
