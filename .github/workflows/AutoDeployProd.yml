@@ -15,9 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Config GitHub
-       run: |
-           git config --local user.email "andreluissilva1@gmail.com"
-           git config --local user.name "andrelu1s"
+      run: |
+          git config --local user.email "andreluissilva1@gmail.com"
+          git config --local user.name "andrelu1s"
     - name: Merge main to prod
       run: |
           git fetch --unshallow
