@@ -17,7 +17,7 @@ jobs:
     - name: Config GitHub
       run: |
           git config --local user.email "andreluissilva1@gmail.com"
-          git config --local user.name "andrelu1s"
+          git config --local user.name "André Luís da Silva"
     - name: Merge main to prod
       run: |
           git fetch --unshallow
