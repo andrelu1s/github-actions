@@ -1,8 +1,8 @@
 name: Deploy-To-EC2
 on:
   push:
-    branches:
-      - prod
+    branches: [prod]      
+    
 jobs:
   deploy:
     name: Deploy to EC2
