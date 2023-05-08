@@ -21,20 +21,7 @@ jobs:
 
     - name: Merge main to prod
       run: |          
-          git checkout prod
+          git swicth prod
           git pull
           git merge --no-ff main -m "Auto-merge main to prod"
-          git push origin prod
-
-    - name: Checkout the files
-      uses: actions/checkout@v3
-
-    - name: Copy files with SSH
-      uses: easingthemes/ssh-deploy@main
-      env:
-        SSH_PRIVATE_KEY: ${{secrets.EC2_SSH_KEY}}
-        SOURCE: "./"
-        REMOTE_HOST: "ec2-54-87-30-87.compute-1.amazonaws.com"
-        REMOTE_USER: "ec2-user"
-        TARGET: "/home/ec2-user"
-        EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh"
+          git push origin prod    
