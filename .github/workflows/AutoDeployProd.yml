@@ -27,7 +27,9 @@ jobs:
           git merge --no-ff main -m "Auto-merge main to prod"
           git push    
 
+    - name: Checkout the files
       uses: actions/checkout@v3
+
     - name: Copy files with SSH
       uses: easingthemes/ssh-deploy@main
       env:
