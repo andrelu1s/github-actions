@@ -18,7 +18,7 @@ jobs:
 
     - name: Merge main to prod
       run: |          
-          git swicth prod
+          git switch prod
           git pull
           git merge --no-ff main -m "Auto-merge main to prod"
           git push origin prod    
