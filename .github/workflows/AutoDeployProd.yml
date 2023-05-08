@@ -21,7 +21,7 @@ jobs:
 
     - name: Merge main to prod
       run: |
-          git fetch --unshallow
+          git fetch origin main
           git checkout prod
           git pull
           git merge --no-ff main -m "Auto-merge main to prod"
