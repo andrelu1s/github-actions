@@ -3,9 +3,6 @@ name: PUSH to prod - Teste André
 on: 
   push:
     branches: [main]
-  pull_request:
-    branches: [master]
-    types: [closed]
 
 jobs:
   merge-main-to-prod:
